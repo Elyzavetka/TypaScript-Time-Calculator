@@ -1,28 +1,28 @@
-export type JavaScriptLearner = {
+export type JavaScriptLearners = {
     id: number;
     name: string;
-    exercises: JavaScriptExercise[];
+    activities: JavaScriptExercises[];
 };
 
-export type JavaScriptExercise = {
+export type JavaScriptExercises = {
     description: string;
-    timeSpent: number; // changing 'hours' to 'timeSpent' for clarity
+    hours: number; // changing 'hours' to 'timeSpent' for clarity
     completed: boolean; // changing 'verified' to 'completed' for clarity
 };
 
-export const javascriptLearners: JavaScriptLearner[] = [
+export const javaScriptLearners: JavaScriptLearners[] = [
     {
         id: 100,
         name: 'Rose Sutton',
-        exercises: [
+        activities: [
             {
             description: 'Complete Introduction to JavaScript',
-            timeSpent: 3,
+            hours: 3,
             completed: true,
             },
             {
             description: 'Create a simple todo list application',
-            timeSpent: 2,
+            hours: 2,
             completed: false,
             },
         ],
@@ -30,10 +30,10 @@ export const javascriptLearners: JavaScriptLearner[] = [
     {
         id: 101,
         name: 'Leigh Gilmour',
-        exercises: [
+        activities: [
             {
             description: 'Debugging JavaScript applications',
-            timeSpent: 4,
+            hours: 4,
             completed: true,
             },
         ],
@@ -41,10 +41,10 @@ export const javascriptLearners: JavaScriptLearner[] = [
     {
         id: 102,
         name: 'Raj Wardle',
-        exercises: [
+        activities: [
             {
             description: 'Working with JavaScript frameworks',
-            timeSpent: 6,
+            hours: 6,
             completed: true,
             },
         ],
@@ -52,15 +52,15 @@ export const javascriptLearners: JavaScriptLearner[] = [
     {
         id: 103,
         name: 'Rayan Gutierrez',
-        exercises: [
+        activities: [
             {
             description: 'JavaScript project: Build a weather app',
-            timeSpent: 5,
+            hours: 5,
             completed: false,
             },
             {
             description: 'Implementing authentication in JavaScript apps',
-            timeSpent: 3,
+            hours: 3,
             completed: true,
             },
         ],
@@ -70,9 +70,9 @@ export const javascriptLearners: JavaScriptLearner[] = [
   // Function to calculate total time spent by JavaScript learners
 export function calculateTotalTimeSpent(): number {
     let totalTimeSpent = 0;
-    for (const learner of javascriptLearners) {
-        for (const exercise of learner.exercises) {
-            totalTimeSpent += exercise.timeSpent;
+    for (const learner of javaScriptLearners) {
+        for (const exercise of learner.activities) {
+            totalTimeSpent += exercise.hours;
         }
     }
     return totalTimeSpent;
